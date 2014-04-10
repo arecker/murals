@@ -11,6 +11,12 @@
 }
 
 
+#inspiration {
+	color: red;
+	font-style: normal;
+	font-weight: bold;
+}
+
 /********** Mobile **********/
 @media screen and (max-width: 750px) {
 	/* Moves Thumbnail body closer to top */
