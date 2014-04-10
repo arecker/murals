@@ -1,4 +1,21 @@
-.main {
+/* Positions thumbnail body in page */
+.thumbnail-body {
 	max-width: 60%;
 	margin-top: 100px;
+}
+
+/* Removes bootstrap frame from thumbnails */
+.thumbnail {
+    border: 0 none;
+    box-shadow: none;
+}
+
+
+/********** Mobile **********/
+@media screen and (max-width: 700px) {
+	/* Moves Thumbnail body closer to top */
+	.thumbnail-body {
+		margin-top: 10px;
+		max-width: 95%;
+	}
 }
