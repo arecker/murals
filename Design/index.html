@@ -61,43 +61,33 @@
 	<div class="container-fluid thumbnail-body">
 		<div class="row">
 			<div class="col-xs-6 col-md-3">
-				<a href="#" class="thumbnail">
-					<img src="thumbnail.svg" alt="">
+				<a href="images/sea.jpg" class="thumbnail">
+					<img src="images/sea.jpg" alt="">
 				</a>
 			</div>
 			<div class="col-xs-6 col-md-3">
-				<a href="#" class="thumbnail">
-					<img src="thumbnail.svg" alt="">
+				<a href="images/bridge.jpg" class="thumbnail">
+					<img src="images/bridge.jpg" alt="">
 				</a>
 			</div>
 			<div class="col-xs-6 col-md-3">
-				<a href="#" class="thumbnail">
-					<img src="thumbnail.svg" alt="">
+				<a href="images/leaf.jpg" class="thumbnail">
+					<img src="images/leaf.jpg" alt="">
 				</a>
 			</div>
 			<div class="col-xs-6 col-md-3">
-				<a href="#" class="thumbnail">
-					<img src="thumbnail.svg" alt="">
+				<a href="images/tree.jpg" class="thumbnail">
+					<img src="images/tree.jpg" alt="This is a fricken tree.">
 				</a>
 			</div>
 			<div class="col-xs-6 col-md-3">
-				<a href="#" class="thumbnail">
-					<img src="thumbnail.svg" alt="">
+				<a href="images/shelter.jpg" class="thumbnail">
+					<img src="images/shelter.jpg" alt="">
 				</a>
 			</div>
 			<div class="col-xs-6 col-md-3">
-				<a href="#" class="thumbnail">
-					<img src="thumbnail.svg" alt="">
-				</a>
-			</div>
-			<div class="col-xs-6 col-md-3">
-				<a href="#" class="thumbnail">
-					<img src="thumbnail.svg" alt="">
-				</a>
-			</div>
-			<div class="col-xs-6 col-md-3">
-				<a href="#" class="thumbnail">
-					<img src="thumbnail.svg" alt="">
+				<a href="images/road.jpg" class="thumbnail">
+					<img src="images/road.jpg" alt="">
 				</a>
 			</div>
 		</div>
@@ -113,6 +103,15 @@
 	<script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 	<script src="camera.min.js" type="text/javascript"></script>
 	<script>
-		jQuery('.camera_wrap').camera();
+		jQuery('.camera_wrap').camera(
+			{
+				loader: 'none',
+				hover: 'false',
+				time: '1000'
+			});
+	</script>
+	<script src="abigimage.min.js"></script>
+	<script>
+		jQuery('.thumbnail').abigimage();
 	</script>
 </footer>
