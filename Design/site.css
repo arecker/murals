@@ -1,5 +1,5 @@
 /* Positions bodies in page */
-.thumbnail-body, .slideshow-body {
+.thumbnail-body, .slideshow-body, .bio-body {
 	max-width: 60%;
 	margin-top: 50px;
 }
@@ -20,7 +20,7 @@
 /********** Mobile **********/
 @media screen and (max-width: 750px) {
 	/* Moves Thumbnail body closer to top */
-	.thumbnail-body, .slideshow-body {
+	.thumbnail-body, .slideshow-body, .bio-body {
 		margin-top: 10px;
 		max-width: 95%;
 	}
