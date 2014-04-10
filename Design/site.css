@@ -12,7 +12,7 @@
 
 
 /********** Mobile **********/
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 750px) {
 	/* Moves Thumbnail body closer to top */
 	.thumbnail-body, .slideshow-body {
 		margin-top: 10px;
