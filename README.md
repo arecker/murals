@@ -1,4 +1,0 @@
-MJAI
-====
-
-MJ Art Inspiration
