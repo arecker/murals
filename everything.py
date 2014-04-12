@@ -15,10 +15,10 @@ def MAP(fileName):
 
 ### Models
 class Gallery:
-    def __init__(self, Title, Description, Slug, Images):
+    def __init__(self, Title, Description=None, Images=None):
         self.title = Title
         self.description = Description
-        self.slug = Slug
+        self.slug = Slugify(Title)
         self.images = Images
 
 
@@ -72,12 +72,21 @@ def ReadGalleries():
         images = []
         for li in p.findNext('ul').findChildren():
             images.append(li.string)
-        galleries.append(Gallery(Title=title, Description=description, Slug=Slugify(title), Images=images))
+        galleries.append(Gallery(Title=title, Description=description, Images=images))
     return galleries
 
 
 def ReadContactMe():
     return MD(MAP('contact.md'))
+
+
+def ReadGalleryLinks():
+    raw = MD(MAP('galleries.md'))
+    galleries = []
+    for p in HTML(raw).findAll('p'):
+        title, description = p.string.split(': ')
+        galleries.append(Gallery(title))
+    return galleries
 
 
 ### Routes
