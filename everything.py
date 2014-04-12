@@ -30,7 +30,8 @@ class HomePage:
 
 ### Controllers
 def GetHome(request):
-    return render_to_response('home.html', {
+    return render_to_response('base.html', {
+        'Galleries': ReadGalleries(),
         'HomePage': ReadHomePage(),
     })
 
@@ -44,7 +45,7 @@ def GetGallery(request, slug):
         gallery = gallery_list[0]
 
     return render_to_response('gallery.html', {
-        'Gallery': ReadContactMe()
+        'Gallery': gallery
     })
 
 

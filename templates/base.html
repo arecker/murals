@@ -35,11 +35,18 @@
 		    </div>
 		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		      <ul class="nav navbar-nav">
-		        <li class="active"><a href="#">Home</a></li>
+		        <li class="active"><a href="/">Home</a></li>
 		        <li class="dropdown">
 		          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Gallery <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                        {% block gallery-dropdown %}
+                        {% for gallery in Galleries %}
+                        <li><a href="/{{ gallery.slug }}">{{ gallery.title }}</a></li>
+                        {% endfor %}
+                        {% endblock %}
+                  </ul>
 		        </li>
-		        <li><a href="#">Contact</a></li>
+		        <li><a href="/contact">Contact</a></li>
 		      </ul>
 		    </div><!-- /.navbar-collapse -->
 		  </div><!-- /.container-fluid -->
