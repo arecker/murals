@@ -17,16 +17,8 @@ Category Two: This is the description of category 2
 
 -->
 
-One: This is the first category
+Placeholder: This is just an example placeholder gallery.  It should probably be removed.
 
-* onesfirstimage.jpg
-* onessecond_image.jpg
-
-Two: This is the second category
-
-* twosfirst.jpg
-* twossecond.jpg
-
-Three: Bullshit gallery
-
-* tree.jpg
+* ph1.jpg
+* ph2.jpg
+* ph3.jpg
