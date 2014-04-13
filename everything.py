@@ -42,7 +42,7 @@ def GetGallery(request, slug):
     try:
         focus_gallery = gallery_list[0]
     except:
-        return HttpRepsonseRedirect('/')
+        return HttpResponseRedirect('/')
 
     return render_to_response('gallery.html', {
         'Focus_Gallery': focus_gallery,
@@ -96,5 +96,6 @@ def ReadGalleryLinks():
 urlpatterns = patterns('',
     (r'^$', GetHome),
     (r'^contact$', GetContactMe),
+    (r'^static/(?P<path>.*)$', 'django.views.static.serve'),
     (r'^(?P<slug>[^/]+)', GetGallery),
 )

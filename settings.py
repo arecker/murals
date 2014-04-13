@@ -21,7 +21,7 @@ USE_L10N = True
 USE_TZ = True
 
 # Static Files
-STATIC_ROOT = Join(dirname(filepath), 'static')
+STATIC_ROOT = dirname(filepath)
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     Join(dirname(filepath), 'static'),
