@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block body %}
+<div class="container-fluid bio-body">
+    <div class="media">
+        <div class="media-body">
+            <h2 class="media-heading">
+                {{ Focus_Gallery.title }}
+            </h2>
+            <p>{{ Focus_Gallery.description }}</p>
+        </div>
+    </div>
+</div>
+
+<!-- Thumbnail Body -->
+<div class="container-fluid thumbnail-body">
+    <div class="row">
+        {% for img in Focus_Gallery.images %}
+        <div class="col-xs-6 col-md-3">
+            <a href="/static/images/{{ img }}" class="thumbnail">
+                <img src="/static/thumbs/thumb-{{ img }}" alt="">
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock%}
