@@ -1,6 +1,6 @@
 # Imports
 from os.path import join as Join
-from os.path import splitext, abspath
+from os.path import splitext, abspath, dirname
 filepath, extension = splitext(__file__)
 
 
@@ -21,9 +21,10 @@ USE_L10N = True
 USE_TZ = True
 
 # Static Files
-STATIC_ROOT = Join(filepath, '..', 'static')
+STATIC_ROOT = Join(dirname(filepath), 'static')
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (
+    Join(dirname(filepath), 'static'),
 )
 
 

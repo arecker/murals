@@ -1,4 +1,4 @@
-from django.shortcuts import render_to_response
+from django.shortcuts import render_to_response, HttpResponseRedirect
 from django.conf.urls import patterns
 from markdown2 import markdown_path as MD
 from BeautifulSoup import BeautifulSoup as HTML
@@ -39,18 +39,20 @@ def GetHome(request):
 def GetGallery(request, slug):
     gallery_list = filter(lambda s: s.slug == slug, ReadGalleries())
 
-    if gallery_list[0] is None:
-        pass #404
-    else:
-        gallery = gallery_list[0]
+    try:
+        focus_gallery = gallery_list[0]
+    except:
+        return HttpRepsonseRedirect('/')
 
     return render_to_response('gallery.html', {
-        'Gallery': gallery
+        'Focus_Gallery': focus_gallery,
+        'Galleries': ReadGalleries(),
     })
 
 
 def GetContactMe(request):
-    return render_to_response('contact.html', {
+    return render_to_response('base.html', {
+        'Galleries': ReadGalleries(),
         'Text': ReadContactMe()
     })
 
@@ -93,6 +95,6 @@ def ReadGalleryLinks():
 ### Routes
 urlpatterns = patterns('',
     (r'^$', GetHome),
-    (r'^contact/', GetContactMe),
+    (r'^contact$', GetContactMe),
     (r'^(?P<slug>[^/]+)', GetGallery),
 )
