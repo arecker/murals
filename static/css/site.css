@@ -11,8 +11,7 @@
 }
 
 /* Make the word INSPIRATION cool */
-#inspiration {
-	color: red;
+.page-header i {
 	font-style: normal;
 	font-weight: bold;
 }
