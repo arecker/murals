@@ -51,7 +51,7 @@ def GetGallery(request, slug):
 
 
 def GetContactMe(request):
-    return render_to_response('base.html', {
+    return render_to_response('contact.html', {
         'Galleries': ReadGalleries(),
         'Text': ReadContactMe()
     })

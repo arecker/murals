@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block body %}
+{% autoescape off %}
+<div class="container-fluid bio-body">
+    <div class="media">
+        <a class="pull-left">
+            <img src="/static/images/thumb-marissa.jpg" height="80px" alt=""/>
+        </a>
+        <div class="media-body">
+            <h2 class="media-heading">
+                Hi!  I'm Marissa
+            </h2>
+            <p>
+                {{ Text }}
+            </p>
+        </div>
+    </div>
+</div>
+{% endautoescape %}
+{% endblock %}

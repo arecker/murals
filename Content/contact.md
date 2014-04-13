@@ -5,9 +5,7 @@
 
 -->
 
-### Hi there!
-
-I'm Marissa, and this is my website.  I'm into a lot of freaky stuff.
+### Welcome to my website.  I'm into a lot of freaky stuff.
 
 You can contact me in a few ways:
 

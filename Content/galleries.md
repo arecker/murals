@@ -26,3 +26,7 @@ Two: This is the second category
 
 * twosfirst.jpg
 * twossecond.jpg
+
+Three: Bullshit gallery
+
+* tree.jpg
