@@ -30,7 +30,7 @@ class HomePage:
 
 ### Controllers
 def GetHome(request):
-    return render_to_response('base.html', {
+    return render_to_response('home.html', {
         'Galleries': ReadGalleries(),
         'HomePage': ReadHomePage(),
     })

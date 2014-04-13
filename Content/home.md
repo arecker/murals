@@ -15,7 +15,7 @@
 Bio: I'm Marissa.  I'm part of your average family.  I got a dad, a mom, and a sister.
 And there is darwin - we found him.  And Donny?  He found us.
 
-* image1.jpg
-* image2.jpg
-* image3.jpg
+* ph1.jpg
+* ph2.jpg
+* ph3.jpg
 

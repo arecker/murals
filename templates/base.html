@@ -53,10 +53,32 @@
 		</nav>
 	</div>
 
+    {% block body %}
+
+    {% endblock %}
+
 
 </body>
 
 <footer>
-
+    {% block scripts %}
+    <script type="text/javascript" src="/static/libs/jquery.min.js"></script>
+	<script type="text/javascript" src="/static/libs/jquery.easing.js"></script>
+	<script type="text/javascript" src="/static/libs/jquery.mobile.customized.min.js"></script>
+	<script type="text/javascript" src="/static/libs/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/static/libs/camera.min.js"></script>
+	<script>
+		jQuery('.camera_wrap').camera(
+			{
+				loader: 'none',
+				hover: 'false',
+				time: '1000'
+			});
+	</script>
+	<script src="/static/libs/abigimage.min.js"></script>
+	<script>
+		jQuery('.thumbnail').abigimage();
+	</script>
+    {% endblock %}
 </footer>
 </html>

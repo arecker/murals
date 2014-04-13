@@ -1,9 +1,29 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title></title>
-</head>
-<body>
-This is home.
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block body %}
+<!-- Bio -->
+<div class="container-fluid bio-body">
+    <div class="media">
+      <a class="pull-left" href="#">
+        <img class="media-object" src="/static/images/thumb-marissa.jpg" height="80px"/>
+      </a>
+        <div class="media-body">
+            <h2 class="media-heading">
+                Hi!  I'm Marissa
+            </h2>
+            <p>
+                {{ HomePage.bio }}
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- Slideshow -->
+<div class="container-fluid slideshow-body">
+    <div class="camera_wrap">
+        {% for img in HomePage.slideshow %}
+        <div data-src="/static/images/{{ img }}"></div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
