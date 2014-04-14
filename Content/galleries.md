@@ -17,7 +17,7 @@ Category Two: This is the description of category 2
 
 -->
 
-Wall Mural: Here is some shit I painted on some bitch ass kid's wall.
+Wall Murals: Here is some shit I painted on some bitch ass kid's wall.
 
 * ch1.jpg
 * ch2.jpg
