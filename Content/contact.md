@@ -5,12 +5,4 @@
 
 -->
 
-### Welcome to my website.  I'm into a lot of freaky stuff.
-
-You can contact me in a few ways:
-
-* Phone
-* Smoke Signals
-* Following stray cats
-
-Thanks!
+The hell do I know how to contact me.  I haven't written this part yet, B.

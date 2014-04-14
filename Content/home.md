@@ -12,10 +12,12 @@
     * anotherfavorite.jpg
 -->
 
-Bio: I'm Alex.  I'm part of your average family.  I got a dad, a mom, and a sister.
-And there is darwin - we found him.  And Donny?  He found us.  I travel the world and take photographs of wildlife.  I'm Eliza Thornberry, bitches.
+Bio: I'm Marissa.  I still need to write this part.
 
-* ph1.jpg
-* ph2.jpg
-* ph3.jpg
+* ch1.jpg
+* ch2.jpg
+* shortcake1.jpg
+* shortcake3.jpg
+* tree1.jpg
+* tree2.jpg
 

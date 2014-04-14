@@ -17,8 +17,13 @@ Category Two: This is the description of category 2
 
 -->
 
-Placeholder: This is just an example placeholder gallery.  It should probably be removed.
+Wall Mural: Here is some shit I painted on some bitch ass kid's wall.
 
-* ph1.jpg
-* ph2.jpg
-* ph3.jpg
+* ch1.jpg
+* ch2.jpg
+* shortcake1.jpg
+* shortcake2.jpg
+* shortcake3.jpg
+* tree1.jpg
+* tree2.jpg
+* tree3.jpg
