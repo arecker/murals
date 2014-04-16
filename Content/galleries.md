@@ -17,7 +17,7 @@ Category Two: This is the description of category 2
 
 -->
 
-Wall Murals: Wall murals are one of my favorite forms of art.  I particularly enjoy doing them for children simply for the look on their face when they walk into their bedroom and see *Calvin and Hobbes* or *Strawberry Shortcake* on their wall.
+Wall Murals: Wall murals are one of my favorite forms of art.  I particularly enjoy doing them for children simply for the look on their face when they walk into their bedroom and see Calvin and Hobbes or Strawberry Shortcake on their wall.
 
 * ch1.jpg
 * ch2.jpg
