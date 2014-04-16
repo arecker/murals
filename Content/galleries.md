@@ -27,3 +27,9 @@ Wall Murals: Wall murals are one of my favorite forms of art.  I particularly en
 * tree1.jpg
 * tree2.jpg
 * tree3.jpg
+
+Watercolor Art: This is some water.
+
+* water1.jpg
+* water2.jpg
+* water3.jpg
