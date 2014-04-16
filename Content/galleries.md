@@ -28,7 +28,7 @@ Wall Murals: Wall murals are one of my favorite forms of art.  I particularly en
 * tree2.jpg
 * tree3.jpg
 
-Watercolor Art: This is some water.
+Watercolor Art: Here are some pieces of art  I was inspired to do by one of my favorite artists, Marion Bolognesi.
 
 * water1.jpg
 * water2.jpg
