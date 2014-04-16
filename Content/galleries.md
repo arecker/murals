@@ -33,3 +33,9 @@ Watercolor Art: Here are some pieces of art  I was inspired to do by one of my f
 * water1.jpg
 * water2.jpg
 * water3.jpg
+
+Drawings: When I first got interested in art, I began with just a mechanical pencil and notebook paper.  As I've expanded my experience with other art mediums, I have still always come back to loving the simplicity of drawing.
+
+* drawing1.jpg
+* drawing2.jpg
+* drawing3.jpg
