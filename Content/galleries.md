@@ -38,4 +38,9 @@ Drawings: When I first got interested in art, I began with just a mechanical pen
 
 * drawing1.jpg
 * drawing2.jpg
-* drawing3.jpg
+* drawing3.jpg 
+
+Paintings: When I first started painting, I didn't like the medium, but I quickly grew to love it.  It is now one of my favorite mediums.
+
+* painting1.jpg
+* painting2.jpg
