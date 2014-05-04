@@ -55,7 +55,7 @@ docs/_build/
 # IDEA
 .idea
 
-./wsgi.py
+wsgi.py
 static/thumbs/*
 static/thumbs/*
 cache/pages/*
