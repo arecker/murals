@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block meta-title %}
+{% block meta_title %}
 <title>{{ Focus_Gallery.title }} | MJ Art Inspiration</title>
 {% endblock %}
 {% block body %}
@@ -20,7 +20,7 @@
         {% for img in Focus_Gallery.images %}
         <div class="col-xs-6 col-md-3">
             <a href="/static/images/{{ img }}" class="thumbnail">
-                <img src="/static/thumbs/thumb-{{ img }}" alt="{{ Focus_Gallery.title }}">
+                <img src="/static/thumbs/thumb-{{ img }}" alt="{{ Focus_Gallery.title }}"/>
             </a>
         </div>
         {% endfor %}

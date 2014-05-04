@@ -56,3 +56,6 @@ docs/_build/
 .idea
 
 static/thumbs/*
+cache/pages/*
+cache/posts/*
+cache/galleries/*
