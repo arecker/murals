@@ -53,8 +53,9 @@ class GalleryList:
 
 
 class Post:
-    def __init__(self, title, description, body):
+    def __init__(self, title, date, description, body):
         self.title = title
+        self.date = date
         self.description = description
         self.body = body
         self.slug = Slugify(title)
@@ -69,6 +70,7 @@ class PostList:
             comments = HTML(raw).findAll(text = lambda text: isinstance(text, Comment))
             this_post = Post(
                 title = comments[0].string.replace('<!--', ''),
+                date = file.split('.')[0],
                 description = comments[1].string.replace('<!--', ''),
                 body = raw
             )

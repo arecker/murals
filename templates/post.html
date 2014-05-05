@@ -4,7 +4,9 @@
 {% endblock %}
 {% block body %}
 <div class="container-fluid post-body">
-    <h2>{{ Post.title }}</h2>
+    <div class="page-header">
+        <h1>{{ Post.title }}<small>        {{ Post.date }}</small></h1>
+    </div>
     <p>
         {{ Post.body }}
     </p>
