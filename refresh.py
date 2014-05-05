@@ -87,12 +87,15 @@ class PostList:
 
 class CacheWriter:
     def __init__(self):
+        print('Reading Galleries')
         self.gallery_list = GalleryList().GetGalleries()
+        print('Reading Posts')
         self.post_list = PostList()
 
 
     def WriteHome(self):
         template = ENV.get_template('home.html')
+        print('Writing Home Page')
         with open(join(CACHE, 'pages', 'home.html'), 'wb') as file:
             file.write(template.render(
                 HomePage = HomePage(),
@@ -103,7 +106,9 @@ class CacheWriter:
 
     def WriteGalleries(self):
         template = ENV.get_template('gallery.html')
+        print('Writing Galleries')
         for gallery in self.gallery_list:
+            print('    - ' + gallery.slug)
             with open(join(CACHE, 'galleries', gallery.slug + '.html'), 'wb') as file:
                 file.write(template.render(
                     Focus_Gallery = gallery,
@@ -114,7 +119,9 @@ class CacheWriter:
 
     def WritePosts(self):
         template = ENV.get_template('post.html')
+        print('Writing Posts')
         for post in self.post_list.posts:
+            print('    - ' + post.slug)
             with open(join(CACHE, 'posts', post.slug + '.html'), 'wb') as file:
                 file.write(template.render(
                     Post = post,
@@ -122,6 +129,7 @@ class CacheWriter:
                     Latest = self.post_list.GetLatest()
                 ))
         template = ENV.get_template('archives.html')
+        print('Writing Archives')
         with open(join(CACHE, 'pages', 'archives.html'), 'wb') as file:
             file.write(template.render(
                 Galleries = self.gallery_list,
@@ -133,6 +141,7 @@ class CacheWriter:
     def WriteContact(self):
         template = ENV.get_template('contact.html')
         raw = MD(join(CONTENT, 'pages/contact.md'))
+        print('Writing Contact Page')
         with open(join(CACHE, 'pages/contact.html'), 'wb') as file:
             file.write(template.render(
                 Galleries = self.gallery_list,
@@ -141,9 +150,9 @@ class CacheWriter:
             ))
 
 
-# Call Methods and Log to console
-cw = CacheWriter()
-cw.WriteHome()
-cw.WriteGalleries()
-cw.WriteContact()
-cw.WritePosts()
+if __name__ == '__main__':
+    cw = CacheWriter()
+    cw.WriteHome()
+    cw.WriteGalleries()
+    cw.WriteContact()
+    cw.WritePosts()
