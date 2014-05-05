@@ -63,7 +63,7 @@ class Post:
 
 class PostList:
     def __init__(self):
-        self.posts = []
+        posts = []
         dictionary = []
         for file in listdir(join(CONTENT, 'posts')):
             raw = MD(join(CONTENT, 'posts', file))
@@ -74,9 +74,15 @@ class PostList:
                 description = comments[1].string.replace('<!--', ''),
                 body = raw
             )
-            self.posts.append(this_post)
+            posts.append(this_post)
             dictionary.append((file, this_post.slug))
+        self.posts = sorted(posts)
         self.dictionary = dict(dictionary)
+
+
+    def GetLatest(self):
+        # Gets latest post
+        return self.posts[-1].slug.encode('ascii', 'ignore')
 
 
 class CacheWriter:
@@ -84,17 +90,26 @@ class CacheWriter:
         self.gallery_list = GalleryList().GetGalleries()
         self.post_list = PostList()
 
+
     def WriteHome(self):
         template = ENV.get_template('home.html')
         with open(join(CACHE, 'pages', 'home.html'), 'wb') as file:
-            file.write(template.render(HomePage = HomePage(), Galleries = self.gallery_list))
+            file.write(template.render(
+                HomePage = HomePage(),
+                Galleries = self.gallery_list,
+                Latest = self.post_list.GetLatest()
+            ))
 
 
     def WriteGalleries(self):
         template = ENV.get_template('gallery.html')
         for gallery in self.gallery_list:
             with open(join(CACHE, 'galleries', gallery.slug + '.html'), 'wb') as file:
-                file.write(template.render(Focus_Gallery = gallery, Galleries = self.gallery_list))
+                file.write(template.render(
+                    Focus_Gallery = gallery,
+                    Galleries = self.gallery_list,
+                    Latest = self.post_list.GetLatest()
+                ))
 
 
     def WritePosts(self):
@@ -103,7 +118,8 @@ class CacheWriter:
             with open(join(CACHE, 'posts', post.slug + '.html'), 'wb') as file:
                 file.write(template.render(
                     Post = post,
-                    Galleries = self.gallery_list
+                    Galleries = self.gallery_list,
+                    Latest = self.post_list.GetLatest()
                 ))
 
 
@@ -111,7 +127,11 @@ class CacheWriter:
         template = ENV.get_template('contact.html')
         raw = MD(join(CONTENT, 'pages/contact.md'))
         with open(join(CACHE, 'pages/contact.html'), 'wb') as file:
-            file.write(template.render(Galleries = self.gallery_list, Text = raw))
+            file.write(template.render(
+                Galleries = self.gallery_list,
+                Latest = self.post_list.GetLatest(),
+                Text = raw
+            ))
 
 
 # Call Methods and Log to console
