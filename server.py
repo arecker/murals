@@ -43,7 +43,7 @@ def GetGallery(slug):
 @app.route("/blog/<slug>/")
 def GetPost(slug):
     try:
-        post = open(join(CACHE, 'post/' + slug + '.html'), 'r').read()
+        post = open(join(CACHE, 'posts/' + slug + '.html'), 'r').read()
         return post
     except:
         missing_page = open(join(CACHE, 'pages/404.html'), 'r').read()
@@ -52,4 +52,5 @@ def GetPost(slug):
 
 ### Init App
 if __name__ == "__main__":
+    app.debug = True
     app.run()

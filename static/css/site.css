@@ -1,7 +1,8 @@
 /* Positions bodies in page */
-.thumbnail-body, .slideshow-body, .bio-body {
+.thumbnail-body, .slideshow-body, .bio-body, .post-body {
 	max-width: 60%;
 	margin-top: 50px;
+	margin-bottom: 50px;
 }
 
 /* Removes bootstrap frame from thumbnails */

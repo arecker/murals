@@ -1,8 +1,9 @@
 from markdown2 import markdown_path as MD
-from BeautifulSoup import BeautifulSoup as HTML
+from BeautifulSoup import BeautifulSoup as HTML, Comment
 from slugify import slugify as Slugify
 from jinja2 import Environment, FileSystemLoader
 from os.path import dirname, realpath, join, splitext, abspath
+from os import listdir
 
 ## Globals
 filepath, extension = splitext(__file__)
@@ -37,7 +38,6 @@ class Gallery:
 class GalleryList:
     def __init__(self):
         self.galleries = []
-        # Read in Galleries
         raw = MD(join(CONTENT, 'pages/galleries.md'))
         for p in HTML(raw).findAll('p'):
             title, description = p.string.split(': ')
@@ -52,10 +52,35 @@ class GalleryList:
         return self.galleries
 
 
+class Post:
+    def __init__(self, title, description, body):
+        self.title = title
+        self.description = description
+        self.body = body
+        self.slug = Slugify(title)
+
+
+class PostList:
+    def __init__(self):
+        self.posts = []
+        dictionary = []
+        for file in listdir(join(CONTENT, 'posts')):
+            raw = MD(join(CONTENT, 'posts', file))
+            comments = HTML(raw).findAll(text = lambda text: isinstance(text, Comment))
+            this_post = Post(
+                title = comments[0].string.replace('<!--', ''),
+                description = comments[1].string.replace('<!--', ''),
+                body = raw
+            )
+            self.posts.append(this_post)
+            dictionary.append((file, this_post.slug))
+        self.dictionary = dict(dictionary)
+
 
 class CacheWriter:
     def __init__(self):
         self.gallery_list = GalleryList().GetGalleries()
+        self.post_list = PostList()
 
     def WriteHome(self):
         template = ENV.get_template('home.html')
@@ -70,6 +95,16 @@ class CacheWriter:
                 file.write(template.render(Focus_Gallery = gallery, Galleries = self.gallery_list))
 
 
+    def WritePosts(self):
+        template = ENV.get_template('post.html')
+        for post in self.post_list.posts:
+            with open(join(CACHE, 'posts', post.slug + '.html'), 'wb') as file:
+                file.write(template.render(
+                    Post = post,
+                    Galleries = self.gallery_list
+                ))
+
+
     def WriteContact(self):
         template = ENV.get_template('contact.html')
         raw = MD(join(CONTENT, 'pages/contact.md'))
@@ -82,3 +117,4 @@ cw = CacheWriter()
 cw.WriteHome()
 cw.WriteGalleries()
 cw.WriteContact()
+cw.WritePosts()

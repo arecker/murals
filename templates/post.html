@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block meta_title %}
+<title>{{ Post.title }} | MJ Art Inspiration</title>
+{% endblock %}
+{% block body %}
+<div class="container-fluid post-body">
+    <h2>{{ Post.title }}</h2>
+    <p>
+        {{ Post.body }}
+    </p>
+</div>
+{% endblock %}
