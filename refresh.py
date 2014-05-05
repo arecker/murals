@@ -65,7 +65,7 @@ class PostList:
     def __init__(self):
         posts = []
         dictionary = []
-        for file in listdir(join(CONTENT, 'posts')):
+        for file in reversed(sorted(listdir(join(CONTENT, 'posts')))):
             raw = MD(join(CONTENT, 'posts', file))
             comments = HTML(raw).findAll(text = lambda text: isinstance(text, Comment))
             this_post = Post(
@@ -76,13 +76,13 @@ class PostList:
             )
             posts.append(this_post)
             dictionary.append((file, this_post.slug))
-        self.posts = sorted(posts)
+        self.posts = posts
         self.dictionary = dict(dictionary)
 
 
     def GetLatest(self):
         # Gets latest post
-        return self.posts[-1].slug.encode('ascii', 'ignore')
+        return self.posts[0].slug.encode('ascii', 'ignore')
 
 
 class CacheWriter:
@@ -121,6 +121,13 @@ class CacheWriter:
                     Galleries = self.gallery_list,
                     Latest = self.post_list.GetLatest()
                 ))
+        template = ENV.get_template('archives.html')
+        with open(join(CACHE, 'pages', 'archives.html'), 'wb') as file:
+            file.write(template.render(
+                Galleries = self.gallery_list,
+                Latest = self.post_list.GetLatest(),
+                Archives = self.post_list.posts
+            ))
 
 
     def WriteContact(self):
