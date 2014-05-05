@@ -17,9 +17,15 @@
 }
 
 
-/* Spaces out H's in post body */
+/* Spaces out elements in post body */
 .post-body-text h1, .post-body-text h2, .post-body-text h3, .post-body-text ul {
     margin-top: 50px;
+}
+
+/* Removes frame around list groups */
+.list-group-item {
+    border: 0 none;
+    box-shadow: none;
 }
 
 /* Make the word INSPIRATION cool */
