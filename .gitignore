@@ -2,3 +2,5 @@
 .env
 static
 db.sqlite3
+uploads/*
+.idea
