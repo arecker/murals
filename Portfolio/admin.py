@@ -25,12 +25,6 @@ class GalleryAdmin(admin.ModelAdmin):
         ImageInline,
     ]
 
-    # Make slug readonly
-    def get_readonly_fields(self, request, obj=None):
-        if obj:
-            return self.readonly_fields + ('slug')
-        return self.readonly_fields
-
 
 admin.site.register(Image, ImageAdmin)
 admin.site.register(Gallery, GalleryAdmin)

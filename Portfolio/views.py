@@ -14,5 +14,13 @@ def get_home(request):
     return render_to_response("home.html", {"data":data})
 
 
+def get_gallery(request, slug):
+    data = Data()
+    data.navbar = get_navbar()
+    data.images = ImageManager.get_images_by_gallery_slug(slug)
+
+    return render_to_response("gallery.html", {"data":data})
+
+
 def get_contact(request):
     return render_to_response("contact.html")
