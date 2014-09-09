@@ -12,3 +12,7 @@ def get_home(request):
     data.carousel = ImageManager.get_carousel_images()
 
     return render_to_response("home.html", {"data":data})
+
+
+def get_contact(request):
+    return render_to_response("contact.html")
