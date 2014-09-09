@@ -17,6 +17,7 @@ class ImageInline(admin.TabularInline):
 def image_delete(sender, instance, **kwargs):
     """Delete associated file when image is deleted"""
     instance.file.delete(False)
+    instance.thumbnail.delete(False)
 
 
 class GalleryAdmin(admin.ModelAdmin):
