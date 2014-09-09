@@ -29,6 +29,14 @@ class GalleryManager:
         return Gallery.objects.all().order_by('title')
 
 
+    @staticmethod
+    def get_gallery_by_slug(slug):
+        try:
+            return Gallery.objects.get(slug=slug)
+        except Gallery.DoesNotExist:
+            return None
+
+
 def get_navbar():
     data = Data()
     data.galleries = GalleryManager.get_galleries()

@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block meta_title %}
+<title>{{ data.gallery.title }} | MJ Art Inspiration</title>
+{% endblock %}
+{% block body %}
+<div class="container-fluid bio-body">
+    <div class="media">
+        <div class="media-body">
+            <h2 class="media-heading">
+                {{ data.gallery.title }}
+            </h2>
+            <p>{{ data.gallery.description }}</p>
+        </div>
+    </div>
+</div>
+
+<!-- Thumbnail Body -->
+<div class="container-fluid thumbnail-body">
+    <div class="row">
+        {% for img in data.images %}
+        <div class="col-xs-6 col-md-3">
+            <a href="/uploads/{{ image.filename }}" class="thumbnail">
+                <img src="/uploads/{{ image.thumb_filename }}" alt="{{ image.name }}"/>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock%}

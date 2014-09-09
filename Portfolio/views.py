@@ -18,6 +18,7 @@ def get_gallery(request, slug):
     data = Data()
     data.navbar = get_navbar()
     data.images = ImageManager.get_images_by_gallery_slug(slug)
+    data.gallery = GalleryManager.get_images_by_gallery_slug(slug)
 
     return render_to_response("gallery.html", {"data":data})
 
