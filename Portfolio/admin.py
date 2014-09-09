@@ -5,7 +5,7 @@ from models import *
 
 
 class ImageAdmin(admin.ModelAdmin):
-    list_display = ['name', 'image_thumb']
+    list_display = ['name', 'image_thumb', 'filename', 'gallery']
 
 
 class ImageInline(admin.TabularInline):
@@ -24,6 +24,12 @@ class GalleryAdmin(admin.ModelAdmin):
     inlines = [
         ImageInline,
     ]
+
+    # Make slug readonly
+    def get_readonly_fields(self, request, obj=None):
+        if obj:
+            return self.readonly_fields + ('slug')
+        return self.readonly_fields
 
 
 admin.site.register(Image, ImageAdmin)

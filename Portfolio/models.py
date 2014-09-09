@@ -1,5 +1,6 @@
 from django.db import models
 from MJAI import settings
+from slugify import slugify
 import os
 
 
@@ -7,9 +8,12 @@ class Gallery(models.Model):
     title = models.CharField(max_length=50, verbose_name="Title")
     description = models.TextField(blank=True, verbose_name="Description")
 
-
     class Meta:
         verbose_name_plural = 'Galleries'
+
+
+    def slug(self):
+        return slugify(self.title)
 
 
     def __unicode__(self):
@@ -21,6 +25,12 @@ class Image(models.Model):
     caption = models.TextField(blank=True, verbose_name="Caption")
     file = models.ImageField(upload_to=settings.UPLOADS)
     gallery = models.ForeignKey(Gallery, blank=True, null=True, on_delete=models.SET_NULL)
+    order = models.IntegerField(blank = True, null = True)
+    carousel = models.BooleanField(default=False, verbose_name="Include in Carousel")
+
+
+    class Meta:
+        ordering = ('order',)
 
 
     def filename(self):

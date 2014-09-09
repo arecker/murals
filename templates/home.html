@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block body %}
+<!-- Bio -->
+<div class="container-fluid bio-body">
+    <div class="media">
+      <a class="pull-left" href="/contact">
+        <img class="media-object" src="http://media.alexrecker.com/images/marissa.jpg" height="80px"/>
+      </a>
+        <div class="media-body">
+            <h2 class="media-heading">
+                Hi!  I'm Marissa
+            </h2>
+            <p>
+                Welcome to my art site. I'm a Wheaton College graduate who loves my soon-to-be husband, my soon-to-be puppy Oliver (the cutest Welsh corgi ever), and last but not least, art. I hope you enjoy it too.
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- Slideshow -->
+<div class="container-fluid slideshow-body">
+    <div class="camera_wrap">
+        {% for img in data.carousel %}
+        <div data-src="/uploads/{{ img.filename }}"></div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
