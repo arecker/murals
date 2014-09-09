@@ -1,19 +1,21 @@
 from django.db import models
 from MJAI import settings
-from slugify import slugify
+from django.template.defaultfilters import slugify
 import os
 
 
 class Gallery(models.Model):
     title = models.CharField(max_length=50, verbose_name="Title")
     description = models.TextField(blank=True, verbose_name="Description")
+    slug = models.SlugField(editable=False)
 
     class Meta:
         verbose_name_plural = 'Galleries'
 
 
-    def slug(self):
-        return slugify(self.title)
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.title)
+        super(Gallery, self).save(*args, **kwargs)
 
 
     def __unicode__(self):

@@ -13,7 +13,7 @@ class ImageManager:
     @staticmethod
     def get_images_by_gallery_slug(slug):
         try:
-            gallery = Gallery.objects.get(slug=slug)
+            gallery = Gallery.objects.get(slug = slug)
         except Gallery.DoesNotExist:
             return None
 
