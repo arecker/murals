@@ -66,7 +66,14 @@ class Image(models.Model):
             return
 
         THUMBNAIL_SIZE = (200,200)
-        DJANGO_TYPE = self.file.file.content_type
+        try:
+            DJANGO_TYPE = self.file.file.content_type
+        except: # this was failing on updates
+            extension = os.path.splitext(self.file.name)[1]
+            if extension in [".jpg", ".jpeg"]:
+                DJANGO_TYPE = 'image/jpeg'
+            else:
+                DJANGO_TYPE = 'image/png'
 
         if DJANGO_TYPE == 'image/jpeg':
             PIL_TYPE = 'jpeg'

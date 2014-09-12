@@ -12,3 +12,5 @@ urlpatterns = patterns('',
     url(r'^grappelli/', include('grappelli.urls')),
     url(r'^admin/', include(admin.site.urls)),
 ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+urlpatterns += patterns('', url(r'^(?P<slug>[-\w\d]+)', 'Portfolio.views.get_gallery'))
