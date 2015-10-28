@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>Marissa's Murals</title>
+    {% include "css.html" %}
+  </head>
+  <body>
+    {% include "navbar.html" %}
+    <div class="container-fluid">
+      {% block body %}
+      {% endblock %}
+    </div>
+    {% include "script.html" %}
+  </body>
+</html>

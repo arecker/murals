@@ -1,0 +1,5 @@
+Django==1.8.5
+django-flat-theme==1.1.1
+django-admin-sortable==2.0.3
+Pillow==3.0.0
+sorl-thumbnail==12.3
