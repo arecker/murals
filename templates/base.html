@@ -2,14 +2,20 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8"/>
+    {% block title %}
     <title>Marissa's Murals</title>
+    {% endblock %}
     {% include "css.html" %}
   </head>
   <body>
     {% include "navbar.html" %}
     <div class="container-fluid">
-      {% block body %}
-      {% endblock %}
+      <div class="row">
+        <div class="col-md-6 col-md-offset-1">
+          {% block body %}
+          {% endblock %}
+        </div>
+      </div>
     </div>
     {% include "script.html" %}
   </body>

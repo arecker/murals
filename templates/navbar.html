@@ -14,18 +14,12 @@
     </div>
     <div id="site-navbar" class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
-        <li
-            {% if not navbar.active %}
-            class="active"
-            {% endif %}>
+        <li>
           <a href="{% url 'index' %}">Home</a>
         </li>
         {% for gallery in navbar.galleries %}
-        <li
-            {% if navbar.active == gallery.slug %}
-            class="active"
-            {% endif %}>
-          <a href="{{ gallery.url }}">{{ gallery.name }}</a>
+        <li>
+          <a href="{{ gallery.get_absolute_url }}">{{ gallery.title }}</a>
         </li>
         {% endfor %}
       </ul>

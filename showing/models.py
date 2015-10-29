@@ -6,20 +6,7 @@ from adminsortable.models import SortableMixin
 from uuid import uuid4
 
 
-class GalleryQuerySet(models.QuerySet):
-    def slug(self, slug):
-        return self.get(slug=slug)
-
-    def as_navbar(self):
-        return [{'name': g.title,
-                 'slug': g.slug,
-                 'url': g.get_absolute_url()}
-                for g in self.all()]
-
-
 class Gallery(SortableMixin, models.Model):
-    objects = GalleryQuerySet.as_manager()
-
     id = models.UUIDField(primary_key=True,
                           default=uuid4,
                           editable=False,
