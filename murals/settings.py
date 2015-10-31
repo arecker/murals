@@ -22,6 +22,7 @@ INSTALLED_APPS = (
     # 3rd party
     'sorl.thumbnail',
     'compressor',
+    'django_forms_bootstrap',
 
     # Apps
     'showing',

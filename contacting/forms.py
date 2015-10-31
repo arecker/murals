@@ -15,4 +15,4 @@ class MessageForm(ModelForm):
 
     class Meta:
         model = Message
-        fields = ['email', 'message']
+        fields = ['email', 'subject', 'message']

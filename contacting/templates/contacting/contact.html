@@ -1,10 +1,24 @@
 {% extends "base.html" %}
 {% block body %}
-<form method="post" action="">
-  <div class="form-group">
-    {% csrf_token %}
-    {{ form }}
-    <button type="submit" class="btn btn-success btn-xs">Go</button>
+<div class="row">
+  <div class="box">
+    <div class="col-lg-12">
+      <hr>
+      <h2 class="intro-text text-center">Contact Me</h2>
+      <hr>
+      <div class="row">
+        <div class="col-lg-6">
+          <form method="post">
+            <div class="form-group">
+              {% csrf_token %}
+              {% load bootstrap_tags %}
+              {{ form | as_bootstrap }}
+              <button type="submit" class="btn btn-success">Send</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
   </div>
-</form>
+</div>
 {% endblock %}

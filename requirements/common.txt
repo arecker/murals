@@ -5,3 +5,4 @@ Pillow==3.0.0
 sorl-thumbnail==12.3
 django-compressor==1.5
 django-ipware==1.1.1
+django-forms-bootstrap-3.0.1
