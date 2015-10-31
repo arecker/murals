@@ -1,0 +1,14 @@
+# Current version of Django
+Django==1.8.2
+
+# Common Reqs
+-r common.txt
+
+# Postgres adapter
+psycopg2==2.6
+
+# Gunicorn server
+gunicorn==19.3.0
+
+# Memcached
+python-memcached

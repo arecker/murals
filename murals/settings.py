@@ -91,5 +91,4 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
 STATIC_ROOT = os.path.join(BASE_DIR, 'prod_static')
 ADMIN_MEDIA_PREFIX = '/media/'
 
-COMPRESS_ENABLED=True
 GOOGLE_ANALYTICS_PROPERTY_ID = 'UA-42540208-9'
