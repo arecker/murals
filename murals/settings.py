@@ -92,3 +92,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'prod_static')
 ADMIN_MEDIA_PREFIX = '/media/'
 
 GOOGLE_ANALYTICS_PROPERTY_ID = 'UA-42540208-9'
+
+try:
+    from prod_settings import *
+except ImportError:
+    pass
