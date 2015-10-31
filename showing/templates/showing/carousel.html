@@ -6,7 +6,7 @@
         <h2 class="brand-before">
           <small>Welcome to</small>
         </h2>
-        <h1 class="brand-name">Marissa's Murals</h1>
+        <img class="text-center" alt="" src="https://placeholdit.imgix.net/~text?txtsize=56&txt=600%C3%97300&w=600&h=300"/>
         <hr class="tagline-divider">
         <h2>
           <small>By
@@ -23,9 +23,12 @@
 
         <!-- Wrapper for slides -->
         <div class="carousel-inner">
+          {% load thumbnail %}
           {% for item in carousel %}
           <div class="item">
-            <img class="img-responsive img-full" alt="" src="{{ item.image.url }}"/>
+            {% thumbnail item.image "800x500" crop="center" as im %}
+            <img class="img-responsive img-full" src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
+            {% endthumbnail %}
           </div>
           {% endfor %}
         </div>
