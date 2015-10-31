@@ -1,6 +1,3 @@
-# Current version of Django
-Django==1.8.2
-
 # Common Reqs
 -r common.txt
 
