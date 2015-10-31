@@ -14,9 +14,6 @@ class Gallery(SortableMixin, models.Model):
 
     title = models.CharField(max_length=150)
     slug = models.SlugField(unique=True)
-    description = models.TextField(null=True,
-                                   blank=True)
-
     order = models.PositiveIntegerField(default=0,
                                         editable=False,
                                         db_index=True)
@@ -49,8 +46,6 @@ class Item(models.Model):
     gallery = models.ForeignKey(Gallery,
                                 null=True,
                                 blank=True)
-    title = models.CharField(max_length=150, null=True, blank=True)
-    description = models.TextField(null=True, blank=True)
     image = ImageField(upload_to='uploads/')
     in_carousel = models.BooleanField(default=True, verbose_name='In home carousel')
 
