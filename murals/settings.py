@@ -21,6 +21,7 @@ INSTALLED_APPS = (
 
     # 3rd party
     'sorl.thumbnail',
+    'compressor',
 
     # Apps
     'showing'
@@ -52,7 +53,8 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
 
                 # Custom
-                'murals.processors.navbar'
+                'murals.processors.navbar',
+                'murals.processors.analytics',
             ],
         },
     },
@@ -74,9 +76,18 @@ USE_L10N = True
 USE_TZ = True
 
 STATIC_URL = '/static/'
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'compressor.finders.CompressorFinder',
+)
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
+STATIC_ROOT = os.path.join(BASE_DIR, 'prod_static')
 ADMIN_MEDIA_PREFIX = '/media/'
+
+COMPRESS_ENABLED=True
+GOOGLE_ANALYTICS_PROPERTY_ID = 'UA-42540208-9'
