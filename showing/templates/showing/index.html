@@ -1,4 +1,8 @@
 {% extends "base.html" %}
 {% block body %}
-<h1>Index</h1>
+{% include "showing/carousel.html" %}
+{% endblock %}
+{% block scripts %}
+{% load staticfiles %}
+<script src="{% static 'js/carousel.js' %}"></script>
 {% endblock %}

@@ -1,0 +1,32 @@
+<div class="brand">Marissa's Murals</div>
+<!-- <div class="address-bar">3481 Melrose Place | Beverly Hills, CA 90210 | 123.456.7890</div> -->
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="{% url 'index' %}">Marissa's Murals</a>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li>
+          <a href="{% url 'index' %}">Home</a>
+        </li>
+        {% for item in navbar.galleries %}
+        <li>
+          <a href="{{ item.get_absolute_url }}">{{ item.title }}</a>
+        </li>
+        {% endfor %}
+        {% if user.is_authenticated %}
+        <li>
+          <a href="{% url 'admin:index' %}">Admin</a>
+        </li>
+        {% endif %}
+      </ul>
+    </div>
+  </div>
+</nav>
