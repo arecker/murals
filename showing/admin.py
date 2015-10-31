@@ -7,7 +7,7 @@ from models import Item, Gallery
 
 class ItemAdmin(AdminImageMixin, admin.StackedInline):
     model = Item
-    extra = 1
+    extra = 0
 
 
 class GalleryAdmin(SortableAdmin):
