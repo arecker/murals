@@ -24,7 +24,8 @@ INSTALLED_APPS = (
     'compressor',
 
     # Apps
-    'showing'
+    'showing',
+    'contacting'
 )
 
 MIDDLEWARE_CLASSES = (

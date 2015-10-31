@@ -19,6 +19,9 @@
           <a href="{{ item.get_absolute_url }}">{{ item.title }}</a>
         </li>
         {% endfor %}
+        <li>
+          <a href="{% url 'contact' %}">Contact</a>
+        </li>
         {% if user.is_authenticated %}
         <li>
           <a href="{% url 'admin:index' %}">Admin</a>
