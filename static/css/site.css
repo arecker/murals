@@ -6,6 +6,10 @@
     margin-top: 10px;
     padding-top: 10px;
     padding-bottom: 10px;
+    font-family: 'Lobster', cursive;
+    text-transform: lowercase;
 }
 
-.navbar {min-height:28px !important;}
+.navbar .nav {
+    min-height:28px !important;
+}
