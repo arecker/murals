@@ -14,6 +14,10 @@
     min-height:28px !important;
 }
 
+.navbar-default {
+    margin-bottom: 0;
+}
+
 hr.fancy {
     border: 0;
     height: 1px;
@@ -24,4 +28,13 @@ hr.fancy {
     text-transform: lowercase;
     font-size: 3em;
     font-family: 'Poiret One', cursive;
+}
+
+.logo-box {
+    margin-bottom: 0;
+    padding: 0;
+}
+
+.navbar-brand {
+    margin-left: 20px;
 }
